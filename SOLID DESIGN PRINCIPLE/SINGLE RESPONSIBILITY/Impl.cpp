@@ -5,6 +5,9 @@
 
 using namespace std;
 
+//Journal will only be responsible for holding the contents 
+//of the journal and nothing else
+	
 struct Journal {
 		string title;
 		vector<string> entries;
@@ -18,7 +21,9 @@ struct Journal {
 			this->entries.push_back(tmp);
 		}
 	};
-	
+
+//PersistenceManager will be responsible for saving only
+
 	struct PersistenceManager {
 		void static save(const Journal& j, const string& fileName) {
 			ofstream ofs(fileName);
